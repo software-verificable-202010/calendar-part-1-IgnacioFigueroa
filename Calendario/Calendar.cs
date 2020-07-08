@@ -164,7 +164,7 @@ namespace CalendarProject
                 using (Stream stream = File.Open(Constants.UsersSerializationPath, FileMode.Open))
                 {
                     BinaryFormatter userData = new BinaryFormatter();
-                    users = (List<User>)userData.Deserialize(stream);
+                    users = userData.Deserialize(stream) as List<User>;
                 }
             }
             catch (Exception)
